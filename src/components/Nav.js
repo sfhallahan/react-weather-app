@@ -1,28 +1,19 @@
 var React = require('react');
 var Zipcode = require('./Zipcode');
+var Link = require('react-router-dom').Link;
 
 
-class Nav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.getWeather = this.getWeather.bind(this);
-  }
-
-  getWeather(location) {
-    console.log('Getting weather for: ' + location);
-  }
-
-  render() {
-    return (
-      <div className='navbar'>
+function Nav (props) {
+  return (
+    <div className='navbar'>
+      <Link to='/'>
         <h1 className='siteTitle'>Weather App</h1>
-        <Zipcode
-          flexDirection='row'
-          onSubmit={this.getWeather}
-        />
-      </div>
-    )
-  }
+      </Link>
+      <Zipcode
+        flexDirection='row'
+      />
+    </div>
+  )
 }
 
 module.exports = Nav;

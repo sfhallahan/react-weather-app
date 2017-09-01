@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = require('prop-types');
+var Link = require('react-router-dom').Link;
 
 class Zipcode extends React.Component {
     constructor(props) {
@@ -9,7 +10,6 @@ class Zipcode extends React.Component {
         userInput: ''
       }
       this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -22,39 +22,41 @@ class Zipcode extends React.Component {
       });
     }
 
-    handleSubmit() {
-      this.props.onSubmit(this.state.userInput);
-    }
-
     render() {
-    return (
-      <div className='zipcode-container' style={{flexDirection: this.props.flexDirection}}>
-        <input
-          type='text'
-          style={{margin: '10px'}}
-          className='form-control'
-          placeholder='St. George, Utah'
-          onChange={this.handleChange}
-        />
-        <button
-          className='btn btn-success'
-          onClick={this.handleSubmit}
+      var location = this.state.userInput.replace(/ +/g, "");
+
+      return (
+        <div
+          className='zipcode-container'
+          style={{flexDirection: this.props.flexDirection}}
         >
-          Get Weather
-        </button>
-      </div>
-    )
+          <input
+            type='text'
+            style={{margin: '10px'}}
+            className='form-control'
+            placeholder='St. George, Utah'
+            onChange={this.handleChange}
+          />
+          <Link
+            to={{
+              pathname: 'forecast',
+              search: '?location=' + location
+            }}
+            className='btn btn-success'
+          >
+            Get Weather
+          </Link>
+        </div>
+      )
   }
 }
 
 Zipcode.propTypes = {
   flexDirection: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func
 }
 
 Zipcode.defaultProps = {
   flexDirection: 'column'
 }
-
 
 module.exports = Zipcode;
