@@ -34,7 +34,7 @@ class Zipcode extends React.Component {
             type='text'
             style={{margin: '10px'}}
             className='form-control'
-            placeholder='St. George, Utah'
+            placeholder='Washington, DC'
             onChange={this.handleChange}
           />
           <Link
