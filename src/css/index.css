@@ -142,6 +142,7 @@ a {
 .smallDayWeather {
   height: 130px;
   width: 130px;
+  cursor: pointer;
 }
 
 .largeDayContainer {
