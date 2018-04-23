@@ -1,5 +1,8 @@
-html, body, #app, #app>div {
-  height: 100%
+html,
+body,
+#app,
+#app > div {
+  height: 100%;
 }
 
 html {
@@ -11,7 +14,8 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    Helvetica Neue, sans-serif;
 }
 
 a {
@@ -42,31 +46,29 @@ a {
   margin-bottom: 50;
 }
 
-
-
 .form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
 .header {
-    font-size: 45px;
-    color: #fff;
-    font-weight: 100;
+  font-size: 45px;
+  color: #fff;
+  font-weight: 100;
 }
 
 .btn {
@@ -74,7 +76,7 @@ a {
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
@@ -100,16 +102,22 @@ a {
   padding: 5px;
 }
 
+.siteTitle {
+  font-size: 28px;
+  font-weight: 100;
+  margin-left: 24px;
+}
+
 .forecast-container {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 15px auto;
   border-top: solid;
-  border-color: rgba(0,0,0,0.16);
+  border-color: rgba(0, 0, 0, 0.16);
 }
 .forecast-header {
   font-size: 55px;
@@ -141,7 +149,6 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: row-reverse;
-
 }
 
 .largeDaySubheader {
@@ -170,4 +177,37 @@ a {
   color: #333;
   font-weight: 100;
   margin: 0px;
+}
+
+@media (max-width: 500px) {
+  .siteTitle {
+    display: none;
+  }
+  .navBar {
+    justify-content: center;
+  }
+
+  .header {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 100;
+  }
+
+  .forecast-header {
+    font-size: 32px;
+  }
+
+  .largeDayContainer {
+    flex-direction: column;
+  }
+
+  .largeDayWeather {
+    height: 150px;
+    width: 150px;
+    margin: 10px 60px;
+  }
+
+  .forecast-container {
+    flex-direction: column;
+  }
 }
